@@ -1,2 +1,2 @@
-## Eğitime başlıyorum 13.07.2022
+## Eğitime başlıyorum 13.07.2022
 
