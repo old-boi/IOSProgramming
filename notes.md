@@ -90,8 +90,22 @@ Toggle(isOn: $showFavoritesOnly) {
 
 @Published diyerek paylaştığımız @EnvironmentObject'ın değeri bundan sonra otomatik olarak update edilecek. 
 
-ContentView  -> burada kullanmadığımız için hiçbir şey yazmıyorum
+ContentView  -> burada kullanmadığımız için hiçbir şey yazmıyorum. UPDATE: yazmayınca ContentView preview'u çöküyor. 
   LandmarkList  -> bu ve child view'larda kullanacağımız için önce @EnvironmentObject olarak property'i tanımladık. 
                 -> .environmentObject() metoduyla da variable'ı ortama koyduk, child view'lara pass'ledik 
     LandmarkRow     -> objeyi kullanmam gerektiği zaman ModelData() olarak çağırıyorum ve ulaşıyorum, variable'a gerek yok
     LandmarkDetail  -> bu da aynı şekilde
+    
+    
+Use the @StateObject attribute to initialize a model object for a given property only once during the life time of the app. This is true when you use the attribute in an app instance, as shown here, as well as when you use it in a view.
+
+
+Eğer bir property, uygulama açıldıktan sonra tek bir defa initialize edilecekse @StateObject attribute'unu kullan.
+
+Eğer environment object'i kullanmak istiyorsa ya ModelData() şeklidne çağıracak ya da @EnvironmentObject var x: ModelData() diyecek 
+(tabii parent view'da .environmentObject(ModelData()) yazılmış olması lazım)
+
+
+### Part 6 (4-5'i atladım)
+
+
