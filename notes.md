@@ -41,3 +41,40 @@ yaptığım zaman da Circle şeklinde, belirtilen özelliklerde çizim yapıyor.
 
 #### Part 2
 
+Instead of hardcoding values, if we want to pull data from somewhere, i.e. a Landmark object, we can use 
+
+var landmark_im: Image
+
+and then pass the image while calling the struct somewhere else. 
+
+Preview'da görmek için Image("Turtle_Rock") şeklinde hard code yapabiliriz. 
+
+### Cannot use instance member 'coordinates' within property initializer; property initializers run before 'self' is available.
+
+Bu yüzden .onAppear {} içinde region = setRegion() şeklinde kodumuzu çalıştırmamız gerekiyor. 
+
+Group {} içine alınca içerideki her şeye aynı fonksiyonu uygulayabiliyorum.
+
+ScrollView {}
+.navigationTitle()
+.navigationBarTitleDisplayMode(.inline) -> inline şekilde display ediyor
+
+
+```swift
+NavigationView {
+            List(landmarks) { landmark in
+                NavigationLink {
+                    LandmarkDetail(landmark: landmark)
+                } label: {
+                    LandmarkRow(landmark_v: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
+        }
+```
+
+NavigationLink gideceği sayfayı, label nereye basıldığında bu sayfaya gidileceğini gösterir. 
+Normalde List(landmarks, id: \.id) yapmam gerekiyordu ama Landmark struct'ı Identifiable protocol'e uygun olduğundan gerek kalmadı.
+
+
+
