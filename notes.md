@@ -77,4 +77,21 @@ NavigationLink gideceği sayfayı, label nereye basıldığında bu sayfaya gidi
 Normalde List(landmarks, id: \.id) yapmam gerekiyordu ama Landmark struct'ı Identifiable protocol'e uygun olduğundan gerek kalmadı.
 
 
+### Part 3
 
+To give the user control over the list’s filter, you need to add a control that can alter the value of showFavoritesOnly. You do this by passing a binding to a toggle control.
+A binding acts as a reference to a mutable state. When a user taps the toggle from off to on, and off again, the control uses the binding to update the view’s state accordingly.
+
+```swift
+Toggle(isOn: $showFavoritesOnly) {
+                    Text("Show Favorites Only")
+                }
+```
+
+@Published diyerek paylaştığımız @EnvironmentObject'ın değeri bundan sonra otomatik olarak update edilecek. 
+
+ContentView  -> burada kullanmadığımız için hiçbir şey yazmıyorum
+  LandmarkList  -> bu ve child view'larda kullanacağımız için önce @EnvironmentObject olarak property'i tanımladık. 
+                -> .environmentObject() metoduyla da variable'ı ortama koyduk, child view'lara pass'ledik 
+    LandmarkRow     -> objeyi kullanmam gerektiği zaman ModelData() olarak çağırıyorum ve ulaşıyorum, variable'a gerek yok
+    LandmarkDetail  -> bu da aynı şekilde
