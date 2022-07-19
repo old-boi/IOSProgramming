@@ -2,6 +2,8 @@
 
 ### 18.07.2022
 
+#### Part 1
+
 Spacer()
 Divider()
 Text()
@@ -35,3 +37,7 @@ yaptığım zaman da Circle şeklinde, belirtilen özelliklerde çizim yapıyor.
 
 .offset() is when we want to move a component from its auto-located position according to the order in which it is at on the VStack or HStack. 
 .padding() is when we want there to be space between the default location of a component and other components. 
+
+
+#### Part 2
+
